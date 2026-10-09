@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آلة حاسبة</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- شاشة إدخال العمر -->
+      <div id="age-prompt">
+        <h1>مرحباً، ادخل عمرك للمتابعة</h1>
+        <input type="number" id="age-input" placeholder="ادخل عمرك للمتابعة" />
+        <button onclick="checkAge()">تأكيد</button>
+      </div>
+
+      <!-- واجهة الآلة الحاسبة -->
+      <div id="calculator">
+        <h1>آلة حاسبة</h1>
+        <input type="text" id="display" readonly />
+        <div class="buttons">
+          <!-- الصف الأول -->
+          <button onclick="clearDisplay()" class="clear">مسح</button>
+          <button onclick="deleteLast()" class="clear">حذف</button>
+          <button onclick="appendToDisplay('/')" class="operator">/</button>
+
+          <!-- الصف الثاني -->
+          <button onclick="appendToDisplay('7')">7</button>
+          <button onclick="appendToDisplay('8')">8</button>
+          <button onclick="appendToDisplay('9')">9</button>
+          <button onclick="appendToDisplay('*')" class="operator">*</button>
+
+          <!-- الصف الثالث -->
+          <button onclick="appendToDisplay('4')">4</button>
+          <button onclick="appendToDisplay('5')">5</button>
+          <button onclick="appendToDisplay('6')">6</button>
+          <button onclick="appendToDisplay('-')" class="operator">-</button>
+
+          <!-- الصف الرابع -->
+          <button onclick="appendToDisplay('1')">1</button>
+          <button onclick="appendToDisplay('2')">2</button>
+          <button onclick="appendToDisplay('3')">3</button>
+          <button onclick="appendToDisplay('+')" class="operator">+</button>
+
+          <!-- الصف الخامس والأخير -->
+          <button
+            onclick="appendToDisplay('0')"
+            class="zero"
+            style="grid-column: span 2"
+          >
+            0
+          </button>
+          <button onclick="appendToDisplay('.')">.</button>
+          <button onclick="calculate()" class="equal" style="grid-column: span 4">=</button>
+        </div>
+      </div>
+      <!-- تم إغلاق الـ div هنا بنجاح -->
+
+      <!-- رسالة الاعتذار -->
+      <div id="apology">
+        <h1>عذراً</h1>
+        <p>لا يمكنك الدخول إلا إذا كان عمرك فوق 18 عاماً فقط</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

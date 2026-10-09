@@ -1,0 +1,126 @@
+/* إعدادات عامة وتصفية القيم الافتراضية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+/* الحاوية الرئيسية */
+.container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* حالة عرض الأقسام (التحكم بالظهور) */
+
+#age-prompt,
+#apology,
+#calculator {
+  display: none;
+}
+
+#age-prompt.visible,
+#apology.visible,
+#calculator.visible {
+  display: block;
+}
+
+/* العناوين والـ Inputs العامة */
+h1 {
+  color: #4a4a4a;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 80%;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* الأزرار العامة */
+button {
+  background-color: #6a1b9a;
+  color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #4a148c;
+}
+
+/* شاشة عرض الآلة الحاسبة */
+#display {
+  width: 100%;
+  padding: 15px;
+  font-size: 24px;
+  text-align: right;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* شبكة أزرار الآلة الحاسبة */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 20px;
+  font-size: 18px;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 5px;
+}
+
+.buttons button.operator {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+.buttons button.equal {
+  background-color: #388e3c;
+  color: #fff;
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+.buttons button.clear {
+  background-color: #d32f2f;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.buttons button:hover {
+  opacity: 0.9;
+}
+
+/* رسالة الاعتذار */
+#apology p {
+  color: #d32f2f;
+  font-size: 18px;
+}
